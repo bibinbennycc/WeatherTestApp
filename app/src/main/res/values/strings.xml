@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Weather App</string>
+    <string name="degree_celsius_symbol">&#xb0;</string>
+    <string name="percentage_symbol">&#x0025;</string>
+    <string name="select_location">Select location</string>
+    <string name="humidity">Humidity</string>
+    <string name="wind_speed">Wind Speed</string>
+    <string name="predictability">Predictability</string>
+    <string name="wind_speed_unit">MPH</string>
+    <string name="no_value_label">NA</string>
+    <string name="something_went_wrong">Something went wrong</string>
+</resources>

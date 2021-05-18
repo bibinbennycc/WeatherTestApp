@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".feature.view.WeatherInfoActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/location_cardview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="5dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/location_spinner_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/select_location"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/location_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/location_spinner_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/weather_icon"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/ic_launcher_foreground"
+        android:scaleType="center"
+        app:layout_constraintTop_toBottomOf="@id/location_cardview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/app_name" />
+
+    <TextView
+        android:id="@+id/max_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/purple_500"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/weather_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/weather_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/dark_text_grey"
+        android:textSize="20sp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/max_temperature"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/weather_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/light_text_grey"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/weather_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/humidity_title"
+        style="@style/WeatherPropertyTitleStyle"
+        android:text="@string/humidity"
+        android:layout_marginStart="24dp"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintEnd_toStartOf="@id/wind_speed_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/humidity"
+        style="@style/WeatherPropertyValueStyle"
+        app:layout_constraintBottom_toTopOf="@id/humidity_title"
+        app:layout_constraintStart_toStartOf="@id/humidity_title"
+        app:layout_constraintEnd_toEndOf="@id/humidity_title"/>
+
+    <TextView
+        android:id="@+id/wind_speed_title"
+        style="@style/WeatherPropertyTitleStyle"
+        android:text="@string/wind_speed"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@id/humidity_title"
+        app:layout_constraintEnd_toStartOf="@id/predictability_title"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/wind_speed"
+        style="@style/WeatherPropertyValueStyle"
+        app:layout_constraintBottom_toTopOf="@id/wind_speed_title"
+        app:layout_constraintEnd_toEndOf="@id/wind_speed_title"
+        app:layout_constraintStart_toStartOf="@id/wind_speed_title" />
+
+    <TextView
+        android:id="@+id/predictability_title"
+        style="@style/WeatherPropertyTitleStyle"
+        android:text="@string/predictability"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@id/wind_speed_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/predictability"
+        style="@style/WeatherPropertyValueStyle"
+        app:layout_constraintBottom_toTopOf="@id/predictability_title"
+        app:layout_constraintStart_toStartOf="@id/predictability_title"
+        app:layout_constraintEnd_toEndOf="@id/predictability_title"/>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
